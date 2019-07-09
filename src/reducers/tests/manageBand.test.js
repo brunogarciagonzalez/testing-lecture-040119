@@ -18,7 +18,7 @@ describe("manageBand", () => {
   });
 
   // adds bands correctly
-  it("adds band correctly", () => {
+  it("adds band", () => {
     let action = { type: "ADD_BAND", name: "Sinatra and the Railers" };
     let initialState = { bands: [] };
     let outputState = { bands: [{ id: 1, name: "Sinatra and the Railers" }] };
@@ -26,4 +26,11 @@ describe("manageBand", () => {
   });
 
   // deletes bands correctly
+  it("deletes band", () => {
+    let action = {type: "DELETE_BAND", id: 1};
+    let initialState = { bands: [{ id: 1, name: "Sinatra and the Railers" }] };
+    let outputState = { bands: [] };
+
+    expect(manageBand(initialState, action)).toEqual(outputState);
+  })
 });
