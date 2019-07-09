@@ -19,7 +19,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ bands }) => ({ bands });
+const mapStateToProps = (storeState) => {
+return { bands: storeState. bands };
+
+}
 
 const mapDispatchToProps = dispatch => ({
   addBand: name => dispatch({ type: "ADD_BAND", name }),
