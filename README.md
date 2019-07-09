@@ -39,10 +39,10 @@ By convention, we can put the tests in the same directory as our code with a `.t
 
 ```
 import React from 'react';
-import manageBand from './manageBand';
+import manageBand from '../manageBand';
 ```
 
-After that, we declare our test suite with a name and a callback:
+After that, we declare our test suite with a test-suite-name and a callback:
 
 ```
 describe('manageBand`, () => {
@@ -50,7 +50,7 @@ describe('manageBand`, () => {
 });
 ```
 
-Each test will also need a name and a callback. If we look at the `switch` statement in our reducer, we see that there are 3 tracks it could follow (2 `case`s and the `default`). We will want a test for each one:
+Each test will also need a name and a callback. If we look at the `switch` statement in our reducer, we see that there are 3 paths of execution that the program could follow (2 `cases` and the `default`). We will want a test for each one:
 
 ```
 describe('manageBand`, () => {
@@ -110,7 +110,7 @@ First we need our dummy data:
 ```
 let mockProps = {
     id: 1,
-    name: 'Pat the Bunny',
+    name: 'Sinatra and the Railers',
     deleteBand: jest.fn()
 };
 ```
